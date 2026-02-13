@@ -2,57 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Detailer | Monte Carlo Simulator</title>
+    <title>Trading & Finance | Monte Carlo Simulator</title>
 </head>
 <body bgcolor="#f4f4f4" text="#333333">
 
     <table width="100%" cellpadding="30" border="0">
         <tr>
             <td align="center">
-                <h1>Built to Spec: The Granular Side of Construction & Finance</h1>
-                <h2>40-Year Monte Carlo Retirement Simulator</h2>
-                <hr width="400">
+                <h1>The Detailer: Finance Division</h1>
+                <hr width="300">
+                <a href="../index.html">Back to Home</a>
             </td>
         </tr>
     </table>
 
-    <table width="800" align="center" cellpadding="20" border="0" bgcolor="#ffffff">
+    <table width="750" align="center" cellpadding="20" border="0" bgcolor="#ffffff">
         <tr>
             <td>
-                <h3>Model Overview</h3>
+                <h2>40-Year Monte Carlo Retirement Simulator</h2>
                 <p>
-                    This advanced Excel model uses a <b>stochastic (randomized) approach</b> to forecast retirement success. 
-                    While standard calculators assume a constant 7% return, this engine runs 1,000 parallel simulations 
-                    to account for market volatility and the "Sequence of Returns" risk.
+                    This model uses a <b>stochastic approach</b> to forecast retirement success. 
+                    Instead of assuming a static return, it simulates 1,000 different market paths to show 
+                    the probability of your portfolio surviving 40 years.
                 </p>
 
                 
 
-                <h3>1. The "Engine" (Logic Flow)</h3>
-                <p>The model utilizes modern Excel functional programming:</p>
+                <h3>1. Technical Model Overview</h3>
+                <p>The "Engine" is built using advanced Excel logic:</p>
                 <ul>
-                    <li><b>MAP:</b> Triggers the 1,000-life dataset.</li>
-                    <li><b>REDUCE:</b> Manages the 40-year compounding timeline.</li>
-                    <li><b>LET:</b> Optimizes complex market and tax variables.</li>
+                    <li><b>MAP Function:</b> Used to trigger the 1,000 randomized "parallel lives."</li>
+                    <li><b>REDUCE Function:</b> Processes the 40-year recursive timeline.</li>
+                    <li><b>Sequence of Returns:</b> Models the risk of a market crash occurring early in retirement.</li>
                 </ul>
 
                 <h3>2. Core Financial Logic</h3>
                 <table border="1" width="100%" cellpadding="10" cellspacing="0">
                     <tr bgcolor="#eeeeee">
-                        <td width="30%"><b>Feature</b></td>
-                        <td><b>Technical Execution</b></td>
+                        <td><b>Logic Segment</b></td>
+                        <td><b>Real-World Application</b></td>
                     </tr>
                     <tr>
-                        <td>Market Volatility</td>
-                        <td>Random returns pulled from a Normal Distribution based on custom Mean/Std Dev.</td>
-                    </tr>
-                    <tr>
-                        <td>Spending Guardrails</td>
-                        <td>Automatic 20% spending reduction if Total Wealth drops below $1.1M.</td>
+                        <td>Guardrail Spending</td>
+                        <td>Automatically cuts spending by 20% if wealth drops below $1.1M.</td>
                     </tr>
                     <tr>
                         <td>Drawdown Order</td>
-                        <td>Prioritizes Cash, then Taxable Brokerage, then Tax-Advantaged accounts.</td>
+                        <td>Drains Cash first, then Brokerage, then Tax-Advantaged accounts.</td>
                     </tr>
                 </table>
 
@@ -69,36 +65,33 @@
                                 </button>
                             </a>
                             
-                            <p><small><i>Requires Microsoft 365 or Excel 2021+ (LAMBDA support).</i></small></p>
+                            <p><small><i>Requires Microsoft 365.</i></small></p>
                         </td>
                     </tr>
                 </table>
 
-                <h3>3. Interpretation</h3>
-                <p>Focus on the <b>Bottom 10%</b> results. If your plan survives this "stress test" scenario, your financial strategy is considered highly robust.</p>
-
                 <hr>
 
-                <h3>Technical Inquiries</h3>
-                <p>Have questions about the MAP/REDUCE logic or the tax-drawdown order? Message me below:</p>
+                <h3>Inquiries</h3>
+                <p>Send a message regarding the stochastic logic or tax-drawdown order:</p>
                 
                 <form action="mailto:rdlgrtn@gmail.com" method="post" enctype="text/plain">
                     <table border="0" cellpadding="5">
                         <tr>
                             <td>Name:</td>
-                            <td><input type="text" name="name" size="35"></td>
+                            <td><input type="text" name="name" size="30"></td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td><input type="text" name="email" size="35"></td>
+                            <td><input type="text" name="email" size="30"></td>
                         </tr>
                         <tr>
                             <td valign="top">Message:</td>
-                            <td><textarea name="message" rows="6" cols="35"></textarea></td>
+                            <td><textarea name="message" rows="5" cols="30"></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="Submit Inquiry"></td>
+                            <td><input type="submit" value="Submit Message"></td>
                         </tr>
                     </table>
                 </form>
