@@ -2,20 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Detailer | Finance & Trading</title>
+    <title>The Detailer | Monte Carlo Retirement Engine</title>
 </head>
 <body bgcolor="#f4f4f4" text="#333333">
 
-    <table width="100%" cellpadding="20" border="0">
+    <table width="100%" cellpadding="30" border="0">
         <tr>
             <td align="center">
-                <h1>The Detailer: Finance Division</h1>
-                <p>
-                    <a href="../index.html">Back to Home</a> | 
-                    <a href="#monte">Monte Carlo</a> | 
-                    <a href="#pmcc">PMCC Strategy</a>
-                </p>
-                <hr width="50%">
+                <h1>The Detailer: Retirement Engineering</h1>
+                <p><a href="../index.html">Back to Home</a></p>
+                <hr width="300">
             </td>
         </tr>
     </table>
@@ -23,88 +19,82 @@
     <table width="800" align="center" cellpadding="20" border="0" bgcolor="#ffffff">
         <tr>
             <td>
-
-                <a name="monte"></a>
                 <h2>40-Year Monte Carlo Retirement Simulator</h2>
-                <p>
-                    This engine runs 1,000 parallel simulations to account for market volatility. 
-                    Unlike a flat 7% estimate, this shows the "Sequence of Returns" risk.
-                </p>
+                
+                <p><b>Model Overview:</b> This advanced Excel model uses a stochastic (randomized) approach to forecast retirement success. Unlike traditional calculators that assume a flat 7% return, this simulation runs <b>1,000 parallel lives</b>, each facing different market volatilities, to show you the range of possible outcomes.</p>
 
+                <h3>1. The "Engine" (How it Works)</h3>
+                <p>The model utilizes a nested functional approach:</p>
                 <ul>
-                    <li><b>Outer Loop (MAP):</b> Triggers 1,000 simulations.</li>
-                    <li><b>Timeline (REDUCE):</b> Manages 40-year growth logic.</li>
+                    <li><b>The Outer Loop (MAP):</b> Triggers the simulation 1,000 times to create a massive data set of potential futures.</li>
+                    <li><b>The Timeline (REDUCE):</b> Iterates through a 40-year sequence, carrying your account balances forward year-by-year and applying compound growth and inflation.</li>
+                    <li><b>The Logic (LET):</b> Assigns names to complex calculations (like market returns and tax rules), making the formula efficient and easy to audit.</li>
                 </ul>
 
-                <table width="100%" bgcolor="#eef2f7" cellpadding="15">
+                <h3>2. Core Financial Logic</h3>
+                <p>The simulation is built with "Real World" variables to ensure accuracy:</p>
+                <ul>
+                    <li><b>Monte Carlo Market Returns:</b> Every year, the model pulls a random return based on a <b>Normal Distribution</b> (using your specific Mean and Standard Deviation). This captures the "Sequence of Returns" risk—the danger of a market crash happening early in retirement.</li>
+                    <li><b>Dynamic "Guardrail" Spending:</b> The model simulates a smart investor. If your Total Wealth (tw) drops below a safety threshold ($1.1M), the model automatically implements a <b>20% spending cut</b> to preserve capital.</li>
+                    <li><b>Intelligent Drawdown Order:</b> To maximize tax efficiency, the model drains accounts in a specific priority:
+                        <ol>
+                            <li>Cash/Savings (No tax hit)</li>
+                            <li>Taxable Brokerage (Capital gains environment)</li>
+                            <li>Tax-Advantaged/Insurance (Applied with a 15% tax/penalty buffer, calculated as fdr).</li>
+                        </ol>
+                    </li>
+                    <li><b>Social Security Integration:</b> The model accounts for the exact year your Social Security benefits begin, reducing the strain on your portfolio (dr) once those checks start arriving.</li>
+                </ul>
+
+                <table width="100%" border="0" cellpadding="20" bgcolor="#eef2f7">
                     <tr>
                         <td align="center">
-                            <strong>Download the Excel Engine:</strong><br><br>
+                            <h3>Get the Engine</h3>
                             <a href="Monte%20Carlo%20-%20Retirement%20Engine.xlsx" download>
-                                <b>💾 Monte Carlo - Retirement Engine.xlsx</b>
+                                <button type="button" style="padding: 10px 20px; cursor: pointer;">
+                                    <b>💾 Download: Monte Carlo - Retirement Engine.xlsx</b>
+                                </button>
                             </a>
                         </td>
                     </tr>
                 </table>
 
-                <br><hr><br>
+                <h3>3. How to Interpret the Results</h3>
+                <p>When you run this simulation, you will get 1,000 different "Ending Balances."</p>
+                <ul>
+                    <li><b>Success Rate:</b> The percentage of simulations where the ending balance is greater than $0.</li>
+                    <li><b>The Median (50th Percentile):</b> Your "most likely" future.</li>
+                    <li><b>The Bottom 10%:</b> Your "Stress Test" scenario. If you can survive this, your plan is incredibly robust.</li>
+                </ul>
 
-                <a name="pmcc"></a>
-                <h2>The Poor Man’s Covered Call (PMCC)</h2>
-                <p>A capital-efficient alternative to owning 100 shares of stock outright.</p>
+                <hr>
 
-                <p><b>Real-World Example: RDDT ($141)</b></p>
-                <table border="1" width="100%" cellpadding="8" style="border-collapse: collapse;">
-                    <tr bgcolor="#eeeeee">
-                        <th>Component</th>
-                        <th>Detail</th>
-                        <th>Metric</th>
-                    </tr>
-                    <tr>
-                        <td>Long Call</td>
-                        <td>$110 Strike (May 15)</td>
-                        <td>80 Delta</td>
-                    </tr>
-                    <tr>
-                        <td>Short Call</td>
-                        <td>$165 Strike (Mar 20)</td>
-                        <td>30 Delta</td>
-                    </tr>
-                </table>
+                <h3>Technical Requirements</h3>
+                <ul>
+                    <li><b>Excel Version:</b> Requires <b>Microsoft 365</b> or <b>Excel 2021+</b> (to support LAMBDA, MAP, and REDUCE).</li>
+                    <li><b>Calculation:</b> For best performance, it is recommended to set Calculation Options to <b>Manual</b> while editing, then press <b>F9</b> to run the 1,000 simulations.</li>
+                </ul>
 
-                <p><b>Trade Screenshot:</b></p>
-                <a href="../images/rddt-trade.png" target="_blank">
-                    <img src="../images/rddt-trade.png" width="100%" border="1">
-                </a>
+                <hr>
 
-                <br><br><hr><br>
-
-                <h3>Technical Questions?</h3>
+                <h3>Technical Inquiries</h3>
                 <form action="mailto:rdlgrtn@gmail.com" method="post" enctype="text/plain">
-                    <table border="0">
-                        <tr>
-                            <td>Name:</td>
-                            <td><input type="text" name="name"></td>
-                        </tr>
-                        <tr>
-                            <td valign="top">Message:</td>
-                            <td><textarea name="message" rows="4" cols="30"></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" value="Send to Erdal"></td>
-                        </tr>
-                    </table>
+                    Name: <input type="text" name="name" size="30"><br><br>
+                    Message:<br>
+                    <textarea name="message" rows="5" cols="40"></textarea><br><br>
+                    <input type="submit" value="Send Inquiry">
                 </form>
 
                 <hr>
                 <center>
-                    <small>&copy; 2026 Erdal Gurten | For Educational Use Only</small>
+                    <small>
+                        <i>Disclaimer: This model is for educational purposes and does not constitute financial advice.</i><br>
+                        &copy; 2026 Erdal Gurten
+                    </small>
                 </center>
-
             </td>
         </tr>
     </table>
-
+    <br><br>
 </body>
 </html>
